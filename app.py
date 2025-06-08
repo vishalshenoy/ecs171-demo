@@ -6,13 +6,10 @@ import gdown
 
 st.set_page_config(page_title="Email Phishing Detector", page_icon="✉️")
 
-# cache so we only ever download & load the model once
 @st.cache_resource
 def load_model():
     model_dir = Path("phishing_model")
     if not model_dir.exists():
-        # this will fetch the entire folder into ./phishing_model
-        # requires gdown>=4.6.0
         folder_url = "https://drive.google.com/drive/folders/1amVI2SAofsG8UkKpe9u00lJFqe64ltAC?usp=share_link"
         gdown.download_folder(folder_url, output=str(model_dir), quiet=False, use_cookies=False)
     model = DistilBertForSequenceClassification.from_pretrained(str(model_dir))
