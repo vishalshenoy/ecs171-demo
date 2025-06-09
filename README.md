@@ -1,8 +1,9 @@
 # Phishing Email Detection Demo
 
+To run the phishing email detection demo, 
+
 1. Create and activate a virtual environment  
    ```bash
-   cd demo
    python3 -m venv .venv
    source .venv/bin/activate
    ```
@@ -16,3 +17,5 @@
    ```bash
    streamlit run app.py
    ```
+
+Open your browser and go to http://localhost:8501 to interact with the demo.
