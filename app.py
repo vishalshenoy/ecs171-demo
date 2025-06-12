@@ -6,6 +6,7 @@ import gdown
 
 st.set_page_config(page_title="Email Phishing Detector", page_icon="✉️")
 
+# Model on Google Drive
 @st.cache_resource
 def load_model():
     model_dir = Path("phishing_model")
